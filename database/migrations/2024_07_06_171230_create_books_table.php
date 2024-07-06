@@ -19,6 +19,9 @@ return new class extends Migration
             $table->year('release');
             $table->string('author', 60);
             $table->boolean('deleted')->default(false);
+            $table->foreignId('publisher_id')->constrained();
+            $table->foreignId('genre_id')->constrained();
+            $table->foreignId('category_id')->constrained();
             $table->timestamps();
         });
     }
