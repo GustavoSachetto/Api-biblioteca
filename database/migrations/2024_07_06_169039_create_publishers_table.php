@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->char('zip_code', 8)->nullable();
             $table->char('phone', 11)->nullable();
-            $table->boolean('deleted')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
