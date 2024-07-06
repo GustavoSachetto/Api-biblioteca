@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('observation')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('book_id')->constrained();
-            $table->boolean('deleted')->default(false);
             $table->dateTime('deadline_at');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
