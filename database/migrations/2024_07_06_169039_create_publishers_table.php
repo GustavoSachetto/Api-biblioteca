@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('publishers', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 60);
-            $table->string('email');
+            $table->string('name', 60)->unique();
+            $table->string('website')->nullable();
+            $table->string('email')->nullable();
             $table->char('zip_code', 8)->nullable();
             $table->char('phone', 11)->nullable();
             $table->softDeletes();
