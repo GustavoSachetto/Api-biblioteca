@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 70);
+            $table->string('title', 70)->unique();
             $table->string('cover')->nullable();
             $table->text('description');
             $table->year('release');
             $table->string('author', 60);
             $table->foreignId('publisher_id')->constrained();
-            $table->foreignId('genre_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->softDeletes();
             $table->timestamps();
