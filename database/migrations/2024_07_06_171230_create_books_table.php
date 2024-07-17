@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title', 70)->unique();
             $table->string('cover')->nullable();
-            $table->text('description');
-            $table->year('release');
+            $table->text('presentation');
+            $table->text('about')->nullable();
+            $table->date('release');
             $table->string('author', 60);
             $table->foreignId('publisher_id')->constrained();
             $table->foreignId('category_id')->constrained();
