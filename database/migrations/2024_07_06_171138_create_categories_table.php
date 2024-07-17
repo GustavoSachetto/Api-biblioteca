@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 45);
-            $table->foreignId('genre_id')->constrained();
-            $table->unique(['name', 'genre_id']);
+            $table->string('name', 45)->unique();
             $table->timestamps();
         });
     }
