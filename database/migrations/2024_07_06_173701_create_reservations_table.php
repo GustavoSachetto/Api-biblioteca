@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('observation')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('book_id')->constrained();
-            $table->dateTime('deadline_at');
+            $table->dateTime('withdrawal');
+            $table->dateTime('devolution');
+            $table->unique(['user_id', 'book_id', 'withdrawal', 'devolution']);
             $table->softDeletes();
             $table->timestamps();
         });
