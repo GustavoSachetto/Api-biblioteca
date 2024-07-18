@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->string('observation')->nullable();
+            $table->text('observation')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('book_id')->constrained();
-            $table->dateTime('withdrawal');
-            $table->dateTime('devolution');
-            $table->unique(['user_id', 'book_id', 'withdrawal', 'devolution']);
+            $table->date('withdrawal');
+            $table->date('devolution');
+            $table->unique(['book_id', 'withdrawal', 'devolution']);
             $table->softDeletes();
             $table->timestamps();
         });
