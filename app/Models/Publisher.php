@@ -18,6 +18,7 @@ class Publisher extends Model
      */
     protected $fillable = [
         'name',
+        'website',
         'email',
         'zip_code',
         'phone',
