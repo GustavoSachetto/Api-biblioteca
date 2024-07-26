@@ -16,19 +16,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([
-        //     PermissionSeeder::class,
-        //     UserSeeder::class,
-        //     PublisherSeeder::class,
-        //     CategorySeeder::class,
-        //     BookSeeder::class,
-        //     ReservationSeeder::class,
-        // ]);
+        $this->call([
+            PermissionSeeder::class,
+            UserSeeder::class,
+            PublisherSeeder::class,
+            CategorySeeder::class,
+            BookSeeder::class,
+            ReservationSeeder::class,
+        ]);
 
-        User::factory()->count(15)->create();
-        Publisher::factory()->count(20)->create();
-        Category::factory()->count(16)->create();
-        Book::factory()->count(80)->create();
-        Reservation::factory()->count(20)->create();
+        // User::factory()->count(15)->create();
+        // Publisher::factory()->count(20)->create();
+        // Category::factory()->count(16)->create();
+        // Book::factory()->count(80)->create();
+        // Reservation::factory()->count(20)->create();
     }
 }
